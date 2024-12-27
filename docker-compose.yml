@@ -1,0 +1,12 @@
+version: '3'
+services:
+  ros2:
+    image: tiryoh/ros2-desktop-vnc:jazzy
+    security_opt:
+      - seccomp=unconfined
+    shm_size: 512m
+    ports:
+      - "6080:80"
+    volumes:
+      - ./dev_ws:/home/ubuntu/dev_ws
+    working_dir: /home/ubuntu/dev_ws
